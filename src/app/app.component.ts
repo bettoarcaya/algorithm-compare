@@ -7,8 +7,10 @@ import { Chart } from 'chart.js';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-  chart : any = null;
+  title = 'compareApp';
+  chartBest : any = null;
+  chartPromediate : any = null;
+  chartWorst : any = null;
   chartRealtime : any = null;
   dataFirst = {
     label: "",
@@ -53,11 +55,23 @@ export class AppComponent {
 
   ngOnInit() : void {
     
-    this.chart = new Chart('realtime', {
+    this.chartBest = new Chart('best', {
       type: 'line',
       data: this.speedData,
       options: this.chartOptions
-      });
+    });
+
+    this.chartPromediate = new Chart('promediate', {
+      type: 'line',
+      data: this.speedData,
+      options: this.chartOptions
+    });
+
+    this.chartWorst = new Chart('worst', {
+      type: 'line',
+      data: this.speedData,
+      options: this.chartOptions
+    });
   }
 
 
