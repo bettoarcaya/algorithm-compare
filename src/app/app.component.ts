@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Chart } from 'chart.js';
+import { HttpClient } from '@angular/common/http'; 
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,7 @@ import { Chart } from 'chart.js';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  datos = []; 
   title = 'compareApp';
   chartBest : any = null;
   chartPromediate : any = null;
@@ -14,7 +17,7 @@ export class AppComponent {
   chartRealtime : any = null;
   dataFirst = {
     label: "",
-            data: [ 100, 200, 300 ],
+            data: this.datos,
             lineTension: 0.3,
             fill: false,
             borderColor: 'red',
@@ -53,8 +56,18 @@ export class AppComponent {
     }
   };
 
+  constructor(private http: HttpClient) {
+    this.getJSON().subscribe(data => {
+        console.log(data)
+    });
+  }
+
+  public getJSON(): Observable<any> {
+    return this.http.get("./assets/data.json")
+  }
+
   ngOnInit() : void {
-    
+
     this.chartBest = new Chart('best', {
       type: 'line',
       data: this.speedData,
