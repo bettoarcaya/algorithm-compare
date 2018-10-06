@@ -87,5 +87,33 @@ export class AppComponent {
     });
   }
 
+  bubble() : number { 
+
+    var size = myArr.length;
+    let ini = new Date().getTime();
+    for( var pass = 1; pass < size; pass++ ){ // outer loop
+      for( var left = 0; left < (size - pass); left++){ // inner loop
+        var right = left + 1;
+        if( myArr[left] > myArr[right] ){
+          swapburbuj(myArr, left, right);
+        }
+      }
+    }
+    let fin = new Date().getTime();
+            
+    let time = fin - ini;
+    return time;
+  }
+
+  insertion() : number {
+
+    return 1;
+  }
+
+  selection() : number {
+
+    return 1;
+  }
+
 
 }
