@@ -183,33 +183,5 @@ export class AppComponent {
     return response;
   }
 
-  /*selection() : number {
-    var size = myArr.length;
-    let ini = new Date().getTime();
-    for( var slot = 0; slot < size -1; slot ++ ){ // outer loop
-        var smallest = slot;
-      for( var check = slot + 1; check < size; check++ ){ // inner loop
-        if( myArr[check] < myArr[smallest] ){
-          smallest = check;
-        }
-      }
-      this.swapselection( myArr, smallest, slot );
-    }
-    let fin = new Date().getTime();
-            
-    let time = fin - ini;
-    return time;
-  }
-
-  swapselection(myArr, indexOne, indexTwo){
-    if( indexOne == indexTwo ){
-        return myArr;
-    }
-    var tmpVal = myArr[indexOne];
-    myArr[indexOne] = myArr[indexTwo];
-    myArr[indexTwo] = tmpVal;
-    return myArr;
-  }*/
-
 
 }
