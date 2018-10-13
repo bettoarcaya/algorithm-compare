@@ -160,7 +160,7 @@ export class AppComponent {
     let fin = new Date().getTime();
             
     let time = fin - ini;
-    let response = this.desconposition(time);
+    let response = this.descomposition(time);
     return response;
   }
 
@@ -171,43 +171,19 @@ export class AppComponent {
     return myArr;
   }
 
-  desconposition(time) : any{
+  descomposition(time) : any{
     let response = [];
     if(time < 0){
       response = [0]
       return response
     }
-    for(let i = 0; i < time; i++){
+    for(let i = 0; i <= time; i++){
       response.push(i);
     }
     return response;
   }
 
-  /*insertion(data) : number {
-    let aux, p;
-    let ini = new Date().getTime();
-    for(let i = 1; i < data.length; i++){
-        aux = data[i];
-        p = i - 1;
-        while(aux < data[p] && p >= 1){
-            data[p+1] = data[p];
-            p = p - 1;
-        }
-        if(data[p] <= aux){
-            data[p + 1] = aux;
-        }else{
-            data[p + 1] = data[p];
-            data[p] = aux;
-        }
-    }
-    let fin = new Date().getTime();
-    
-    let time = fin - ini;
-    
-    return time;
-  }
-
-  selection() : number {
+  /*selection() : number {
     var size = myArr.length;
     let ini = new Date().getTime();
     for( var slot = 0; slot < size -1; slot ++ ){ // outer loop
