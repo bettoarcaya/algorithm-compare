@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InsertionComponent } from './insertion/insertion.component';
+import { SelectionComponent } from './selection/selection.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { InsertionComponent } from './insertion/insertion.component';
     AppComponent,
     HomeComponent,
     FooterComponent,
-    InsertionComponent
+    InsertionComponent,
+    SelectionComponent
   ],
   imports: [
     BrowserModule,
